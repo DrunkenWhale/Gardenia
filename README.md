@@ -1,3 +1,3 @@
 # Gardenia
 
-a db codegen tool?
+db codegen tool

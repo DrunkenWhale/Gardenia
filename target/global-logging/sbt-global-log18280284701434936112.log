@@ -1,0 +1,122 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.6.2 (Oracle Corporation Java 17.0.2)
+[debug]       Load.loadUnit: plugins took 84.0675ms
+[debug]       Load.loadUnit: defsScala took 0.3368ms
+[debug] [Loading] Scanning directory C:\Users\Nephren\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\Nephren\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 20.0289 ms
+[debug]           Load.resolveProject(global-plugins) took 51.7033ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\Nephren\.sbt\1.0\plugins, plugins: List(<none>))) took 90.9038ms
+[debug] [Loading] Done in C:\Users\Nephren\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 116.0883ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.2877ms
+[debug]     Load.loadUnit(file:/C:/Users/Nephren/.sbt/1.0/plugins/, ...) took 218.2563ms
+[debug]   Load.apply: load took 396.1091ms
+[debug]   Load.apply: resolveProjects took 8.0581ms
+[debug]   Load.apply: finalTransforms took 87.2305ms
+[debug]   Load.apply: config.delegates took 8.3416ms
+[debug]   Load.apply: Def.make(settings)... took 377.8213ms
+[debug]   Load.apply: structureIndex took 88.6665ms
+[debug]   Load.apply: mkStreams took 1.5015ms
+[info] loading global plugins from C:\Users\Nephren\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 2381.1286ms
+[debug]           Load.loadUnit: plugins took 32.0584ms
+[debug]           Load.loadUnit: defsScala took 0.0038ms
+[debug] [Loading] Scanning directory C:\Users\Nephren\Data\Project\Gardenia\project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\Nephren\Data\Project\Gardenia\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 2.0627 ms
+[debug]               Load.resolveProject(gardenia-build) took 1.3655ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id gardenia-build, base: C:\Users\Nephren\Data\Project\Gardenia\project, plugins: List(<none>))) took 3.9994ms
+[debug] [Loading] Done in C:\Users\Nephren\Data\Project\Gardenia\project, returning: (gardenia-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 5.9228ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.0114ms
+[debug]         Load.loadUnit(file:/C:/Users/Nephren/Data/Project/Gardenia/project/, ...) took 38.8365ms
+[debug]       Load.apply: load took 40.5808ms
+[debug]       Load.apply: resolveProjects took 0.1498ms
+[debug]       Load.apply: finalTransforms took 11.9787ms
+[debug]       Load.apply: config.delegates took 0.7811ms
+[debug]       Load.apply: Def.make(settings)... took 88.2394ms
+[debug]       Load.apply: structureIndex took 28.6453ms
+[debug]       Load.apply: mkStreams took 0.0034ms
+[info] loading project definition from C:\Users\Nephren\Data\Project\Gardenia\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 361.171ms
+[debug]     Load.loadUnit: defsScala took 0.0035ms
+[debug] [Loading] Scanning directory C:\Users\Nephren\Data\Project\Gardenia
+[debug]       Load.loadUnit: mkEval took 4.9369ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.625 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 12.7058ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\Nephren\Data\Project\Gardenia, plugins: List(<none>))) took 15.4835ms
+[debug] [Loading] Done in C:\Users\Nephren\Data\Project\Gardenia, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1813.2281ms
+[debug]     Load.loadUnit: cleanEvalClasses took 14.7546ms
+[debug]   Load.loadUnit(file:/C:/Users/Nephren/Data/Project/Gardenia/, ...) took 2190.2307ms
+[debug] Load.apply: load took 2192.183ms
+[debug] Load.apply: resolveProjects took 0.1366ms
+[debug] Load.apply: finalTransforms took 11.679ms
+[debug] Load.apply: config.delegates took 0.4006ms
+[debug] Load.apply: Def.make(settings)... took 65.6262ms
+[debug] Load.apply: structureIndex took 23.2276ms
+[debug] Load.apply: mkStreams took 0.0031ms
+[info] set current project to Gardenia (in build file:/C:/Users/Nephren/Data/Project/Gardenia/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:sbt-server-791f8dd8213143e265f6
+[debug] Writing bsp connection file
+[info] started sbt server
