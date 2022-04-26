@@ -7,4 +7,4 @@ lazy val root = (project in file("."))
     name := "Gardenia"
   )
 
-libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.23"
+libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.28"
