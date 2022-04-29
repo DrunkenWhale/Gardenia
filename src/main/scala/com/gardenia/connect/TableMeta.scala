@@ -7,7 +7,8 @@ object TableMeta {
 
   private val excludeTableName = Array("sys_config")
 
-  def getTableMetaList(connection: Connection): List[TableMeta] = {
+  def getTableMetaList: List[TableMeta] = {
+    val connection = DataBaseManager.getConnection
     val tableSet = connection
       .getMetaData
       .getTables(null,
@@ -22,7 +23,7 @@ object TableMeta {
         res.addOne(
           TableMeta(
             name = name,
-            columnList = getColumnNameToTypeList(connection, name)
+            columnList = getColumnNameToTypeList(name)
           )
         )
       }
@@ -30,7 +31,8 @@ object TableMeta {
     res.result()
   }
 
-  private[gardenia] def getColumnNameToTypeList(connection: Connection, tableName: String): List[(String, String)] = {
+  private[gardenia] def getColumnNameToTypeList(tableName: String): List[(String, String)] = {
+    val connection = DataBaseManager.getConnection
     val resSet = connection
       .getMetaData
       .getColumns(null,
