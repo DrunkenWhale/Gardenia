@@ -1,4 +1,4 @@
-package com.gardenia.expor.tpe
+package gardenia.expor.tpe
 
 trait ExportTypes {
   val tpe: Int

@@ -1,4 +1,4 @@
-package com.gardenia.expor.tpe
+package gardenia.expor.tpe
 
 final case
 class JsonType() extends ExportTypes {

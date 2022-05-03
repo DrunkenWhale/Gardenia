@@ -1,13 +1,15 @@
-package com.gardenia.expor.conduct
+package gardenia.expor.conduct
 
-import com.gardenia.connect.{DataBaseManager, MySQLConnection, TableMeta}
-import com.gardenia.expor.conduct.Export.{generatorCaseClass, generatorJavaClass, typeMappingJavaType}
-import com.gardenia.expor.tpe.{ExportTypes, JsonType}
+import Export.{generatorCaseClass, generatorJavaClass, generatorJson, typeMappingJavaType}
+import gardenia.connect.{DataBaseManager, MySQLConnection, TableMeta}
+import gardenia.expor.tpe.{ExportTypes, JsonType}
 
 import java.io.File
 import java.nio.file.attribute.FileAttribute
 import java.nio.file.{Files, Path, StandardOpenOption}
 import scala.reflect.ClassTag
+import rosemary.stringify.Generate.{obj, given}
+import rosemary.parser.model.JsonValue
 
 class Export(override private[expor] val exportPath: String) extends ExportConduct {
 
@@ -16,7 +18,13 @@ class Export(override private[expor] val exportPath: String) extends ExportCondu
     clsTag.runtimeClass.getSimpleName match
       case "JsonType" =>
         val tableMetaList = TableMeta.getTableMetaList
-      //TODO to json (using rosemary)
+        val path: Path = Path.of(exportPath + File.separator + "export.json")
+        Files.createFile(path)
+        val res: String = tableMetaList.map(meta => {
+          val conduct: String = generatorJson(meta)
+          conduct
+        }).mkString("[", ",", "]")
+        Files.write(path, res.getBytes(), StandardOpenOption.WRITE)
 
       case "JavaClassType" =>
         val tableMetaList = TableMeta.getTableMetaList
@@ -27,7 +35,6 @@ class Export(override private[expor] val exportPath: String) extends ExportCondu
             Files.write(path, generatorJavaClass(meta).getBytes(), StandardOpenOption.WRITE)
           }
         )
-      //TODO to java class
 
       case "CaseClassType" => {
         val tableMetaList = TableMeta.getTableMetaList
@@ -46,6 +53,12 @@ class Export(override private[expor] val exportPath: String) extends ExportCondu
 }
 
 object Export {
+
+  private def generatorJson(tableMeta: TableMeta): JsonValue = {
+    obj(
+      tableMeta.name -> obj(tableMeta.columnList.toMap)
+    )
+  }
 
   private def generatorJavaClass(tableMeta: TableMeta): String = {
 
@@ -68,11 +81,11 @@ object Export {
       val t = typeMappingJavaType(tpe)
       s"""
          |public $t get${name.charAt(0).toUpper.toString.appendedAll(name.substring(1))}(){
-         |  return this.$name
+         |  return this.$name;
          |}
          |
          |public void set${name.charAt(0).toUpper.toString.appendedAll(name.substring(1))}($t $name){
-         |    this.$name = $name
+         |    this.$name = $name;
          |}
          |""".stripMargin
     }).mkString("\n")
@@ -96,6 +109,13 @@ object Export {
       case "INT" => "int"
       case "TEXT" | "CHAR" | "VARCHAR" => "String"
       case "BIT" => "boolean"
+      case "BIGINT" => "long"
+      case "DOUBLE" => "double"
+      case "FLOAT" => "float"
+      case "DATE" => "java.sql.Date"
+      case "TIME" => "java.sql.Time"
+      case "TIMESTAMP" => "java.sql.Timestamp"
+      case "YEAR" | "DATETIME" => throw new Exception(s"UnSupport SQL Type YEAR | DATETIME")
       case x => throw new Exception(s"Unknown SQL Type $x")
   }
 
@@ -105,12 +125,17 @@ object Export {
   }
 
   private def typeMappingScalaType(typeName: String): String = {
-    // TODO
-    //expansion type mapping
     typeName match
       case "INT" => "Int"
       case "TEXT" | "CHAR" | "VARCHAR" => "String"
       case "BIT" => "Boolean"
+      case "BIGINT" => "Long"
+      case "DOUBLE" => "Double"
+      case "FLOAT" => "Float"
+      case "DATE" => "java.sql.Date"
+      case "TIME" => "java.sql.Time"
+      case "TIMESTAMP" => "java.sql.Timestamp"
+      case "YEAR" | "DATETIME" => throw new Exception(s"UnSupport SQL Type YEAR | DATETIME")
       case x => throw new Exception(s"Unknown SQL Type $x")
   }
 

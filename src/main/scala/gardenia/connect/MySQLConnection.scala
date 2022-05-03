@@ -1,4 +1,4 @@
-package com.gardenia.connect
+package gardenia.connect
 
 import java.sql.{Connection, DriverManager}
 
